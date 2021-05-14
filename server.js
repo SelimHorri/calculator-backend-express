@@ -16,11 +16,11 @@ app.get("/msg", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/view/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/login", function(req, res) {
-  res.sendFile(__dirname + "/view/login.html");
+  res.sendFile(__dirname + "/login.html");
 });
 
 app.post("/login", function(req, res) {
@@ -38,7 +38,7 @@ app.post("/login", function(req, res) {
 });
 
 app.get("/calc", function(req, res) {
-  res.sendFile(__dirname + "/view/calc.html");
+  res.sendFile(__dirname + "/calc.html");
 });
 
 app.post("/calc", function(req, res) {
