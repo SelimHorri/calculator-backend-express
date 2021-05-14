@@ -24,18 +24,27 @@ app.get("/login", function(req, res) {
 });
 
 app.post("/login", function(req, res) {
-  
   var username = req.body.username;
   var password = req.body.password;
   
   if (username === "selimhorri" && password === "0000") {
     console.log("logged in at: " + new Date());
-    res.send("Welcome back " + username.toUpperCase());
+    res.redirect("/calc");
   }
   else {
     console.log("incorrect! at: " + new Date());
     res.redirect("/login");
   }
+});
+
+app.get("/calc", function(req, res) {
+  res.sendFile(__dirname + "/calc.html");
+});
+
+app.post("/calc", function(req, res) {
+  var num1 = Number(req.body.num1);
+  var num2 = Number(req.body.num2);
   
+  res.send("this is an addition: " + (num1 + num2));
 });
 
